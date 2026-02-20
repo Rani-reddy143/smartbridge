@@ -1,22 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Prediction Result</title>
-	<style>
-		body { font-family: Arial, sans-serif; background-color: #f4f4f4; display: flex; justify-content: center; padding: 20px; }
-		.container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 100%; max-width: 500px; text-align: center; }
-		h2 { color: #333; }
-		p { font-size: 1.2em; }
-		a { display: inline-block; margin-top: 20px; text-decoration: none; color: #4CAF50; }
-	</style>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f2f2f2;
+            text-align: center;
+        }
+
+        .result-box {
+            width: 400px;
+            margin: 150px auto;
+            background: white;
+            padding: 40px;
+            box-shadow: 0 0 8px rgba(0,0,0,0.2);
+            border-radius: 5px;
+        }
+
+        .btn {
+            margin-top: 20px;
+            background-color: #28a745;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #218838;
+        }
+    </style>
 </head>
 <body>
-	<div class="container">
-		<h2>Prediction Result</h2>
-		<p><strong>{{ result }}</strong></p>
-		<a href="/">&larr; Back</a>
-	</div>
+
+    <div class="result-box">
+        <h2>Prediction Result</h2>
+        <h3>Adaptivity Level: {{ result }}</h3>
+
+        <a href="{{ url_for('home') }}">
+            <button class="btn">Back</button>
+        </a>
+    </div>
+
 </body>
 </html>
